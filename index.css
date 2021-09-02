@@ -1,0 +1,504 @@
+/* Primero se importan las tipografías, se normaliza los margenes y rellenos, y se generaliza el formato de los titulos, parrafos y listas */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Source+Sans+Pro&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F6FDFF;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', Verdana;
+  color: white;
+}
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #20353d;
+  line-height: 2;
+  margin: 20px auto;
+}
+ul li{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #20353d;
+  line-height: 2;
+
+}
+
+/* Estilos de la barra de navegación para todos los sitios */
+nav {
+   display: flex;
+   background-color: #DBFFD5;
+   width: 100%;
+   position: sticky;
+   top: 0;
+   z-index: 2;
+   opacity: .9;
+ }
+ /* Disposición de la barra de navegación como flexible, organización de cada caja de lista y estilos de hover*/
+ .cajaNav {
+   display: flex;
+   height: 64px;
+   margin-left: 64px;
+ }
+
+.cajaNav li {
+  list-style: none;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.cajaNav a, .cajaNav a:visited{
+  text-decoration: none;
+  font-family: 'Source Sans Pro', Verdana;
+  line-height: 4;
+  align-items: center;
+  color: #20353d;
+}
+.cajaNav a:active{
+  color: white;
+}
+
+.cajaNav > li:hover {
+  background-color: #a9e0a3;
+  border-bottom: 4px solid #1b778c;
+  font-weight: 600;
+  transition: .15s;
+}
+/* Sitio de la página (submenu)*/
+#sitio:hover .submenu{
+  visibility: visible;
+}
+.submenu {
+  position: absolute;
+  display: block;
+  background-color: #DBFFD5;
+  left: 64px;
+  visibility: hidden;
+}
+.submenu li {
+  width: 120px;
+  height: 60px;
+}
+.submenu li:hover {
+  background-color: #a9e0a3;
+  transition: .12s;
+}
+
+
+/* Estilos de banner de cada sitio usando id para identificarlos */
+/* Solo afecta el banner de index.html */
+#bannerInicio {
+  position: relative;
+  width: 100%;
+  height: 470px;
+  background-image: url(imagenes/Banner1.png);
+}
+#bannerInicio h1 {
+  position: absolute;
+  font-size: 46px;
+  letter-spacing: 4px;
+  top: 90px;
+  left: 100px;
+  width: 35%;
+}
+#bannerInicio p {
+  position: absolute;
+  top: 200px;
+  left: -20px;
+  right: 0;
+  font-size: 20px;
+  width: 30%;
+}
+/* Solo afecta al banner de florayfauna.html */
+#bannerFF {
+  background-image: url(imagenes/Banner2.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 470px;
+  position: relative;
+}
+#bannerFF h1 {
+  font-size: 50pt;
+  color: #20353D;
+  position: absolute;
+  top: 73px;
+  left: 100px;
+  letter-spacing: 4px;
+}
+
+
+/* Clase/formato para parrafo centrado*/
+.parrafoCentrado {
+  margin: 45px 25%;
+  padding-top: 45px;
+}
+
+
+/* Se llama la etiqueta footer pues será la misma para todas las páginas, estilos unicamente para este contenedor */
+footer {
+  display: flex;
+  background-color: #004b5f;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  align-content: space-around;
+  position: relative;
+  bottom: 0;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+footer ul li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+footer img {
+  width: 24px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.social-media li{
+  background-color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+footer a, footer p, footer li {
+  color: #1b778c;
+  font-weight: bold;
+}
+.autor {
+  position: relative;
+  right: 0;
+}
+
+
+/* Clase/forma para diferentes contenedores */
+.circulo {
+   width: 130px;
+   height: 130px;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+   background: #1b778c;
+   opacity: .7;
+}
+
+/* Clase/cambio de color para contenedores (div, formas)*/
+.verde {
+  background-color: #79ae74;
+}
+
+/* Clase/Formato para titulo dentro de un contenerdor <div> */
+.tituloCaja {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  letter-spacing: .5px;
+}
+/* Clase/Propiedad para flotar un objeto absoluto a la izquierda */
+.flotarIzquierda {
+  position: absolute;
+  left: 13%;
+}
+/* Clase/Propiedad para flotar un objeto absoluto a la derecha */
+.flotarDerecha {
+  position: absolute;
+  right: 13%;
+}
+
+
+/* Estilos nativos del iFrame */
+.mapouter{
+  margin: auto;
+  text-align:right;
+  height:500px;
+  width:600px;
+  border-radius: 14px;
+}
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:500px;
+  width:600px;
+  border-radius: 14px;
+}
+/* Clase para contenedor de imagenes */
+.contenedorImagenes {
+  margin-top: 75px;
+  align-items: center;
+  padding: 5px;
+  padding-top: 75px;
+}
+.contenedorImagenes img {
+  width: 350px;
+  padding: 5px;
+  transition: .35s;
+}
+.contenedorImagenes img:hover{
+  width: 400px;
+  box-shadow: 0px 6px 10px rgba(14, 31, 53, 0.12), 0px 12px 18px rgba(14, 31, 53, 0.20), 0px 20px 40px rgba(14, 31, 53, 0.12);
+}
+/*Galería de fotos de la pagina fauna y flora */
+.galeria {
+  display: flex;
+  padding: 70px 0px;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.galeria img {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  transition: .35s;
+}
+.galeria img:hover {
+  transform: scale(1.3);
+  box-shadow: 0px 6px 10px rgba(14, 31, 53, 0.12), 0px 12px 18px rgba(14, 31, 53, 0.20), 0px 20px 40px rgba(14, 31, 53, 0.12);
+  background-color: white;
+}
+/* Diseño por columnas con display/flex */
+.ColumnaGaleria{
+  padding: 5px;
+}
+.carousel {
+  padding: 5px;
+}
+/* Clase para efecto de sombra, sensación de flotar */
+.sombraLarga {
+  box-shadow: 0px 6px 10px rgba(14, 31, 53, 0.12), 0px 12px 18px rgba(14, 31, 53, 0.20), 0px 20px 40px rgba(14, 31, 53, 0.12);
+}
+/*Estilo para titulos dentro de una lista */
+.tituloLista {
+  margin-top: 45px;
+  padding-top: 10px;
+  background-color: #004b5f;
+  border-radius: 50%;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  opacity: .8;
+}
+/* Estilos de una lista con titulos dentro */
+.listaConTitulo{
+  list-style:none;
+}
+.listaConTitulo p{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+/* Clase para agregar un shape trasero en un div */
+.panelTrasero {
+  background-color: #EEF0C5;
+  border-radius: 14px;
+  width: 75%;
+  margin: 100px auto;
+  padding: 40px;
+
+}
+/* Estilos de tarjetas dentro del shape, solo afecta si hay divs dentro */
+.panelTrasero div{
+  background-color: #56a6bc;
+  border-radius: 14px;
+  margin: 10px;
+  padding: 20px;
+  max-width: 400px;
+  transition: .12s ease;
+}
+.panelTrasero a, .panelTrasero a:visited {
+  text-decoration: none;
+}
+.panelTrasero div:hover{
+  transform: scale(1);
+  box-shadow: 0px 6px 10px rgba(14, 31, 53, 0.12), 0px 12px 18px rgba(14, 31, 53, 0.20), 0px 20px 40px rgba(14, 31, 53, 0.12);
+}
+.panelTrasero > h1 {
+  margin-right: 20px;
+}
+
+/* Clase para disponer objetos con display flex */
+.flexDisplayCentrado {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Clase con stilos adicionales para listas */
+.order {
+  margin-top: 150px;
+}
+.order div{
+  padding: 5px;
+  margin: 0 15px;
+}
+
+@media screen and (max-width: 800px){
+  /* Re escribiendo medidas de texto acorde a la pantalla */
+  p{
+    font-size: 1em;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  /* Re escribiendo tamaño de la barra de navegación */
+  .cajaNav {
+    height: 56px;
+    width: 100%;
+    margin-left: 0;
+    overflow-x: visible;
+  }
+  .cajaNav li {
+    align-items: center;
+    padding: 12px 10px;
+  }
+  .cajaNav a {
+    line-height: 1;
+  }
+  #submenu {
+    visibility: hidden;
+  }
+  /* Redimensionamiento de el banner de la pagina de inicio */
+  #bannerInicio {
+    background-image: url(imagenes/media-480-800/banner1.png);
+    background-repeat: no-repeat;
+  }
+  #bannerInicio h1 {
+    font-size: 2.6em;
+    top: 24px;
+    left: 24px;
+    width: 400px;
+  }
+  #bannerInicio p{
+    line-height: 1.5;
+    font-size: 1em;
+    left: 25%;
+    width: 40%
+  }
+  /* Ubicar el circulo flotante arriba del texto con un marge de 24px de los costados (depende el caso)*/
+  .circulo {
+    height: 118px;
+    width: 118px;
+    margin-top: 24px;
+  }
+  /*Redimensionamiento del formato de parrafo, más amplio acorde a la pagína completa*/
+  .parrafoCentrado {
+    margin: 0 34px;
+    padding-top: 0;
+  }
+  /* Redimensionamiento del mapa de la pagina inicio */
+  .mapouter{
+    margin-top: 48px;
+    height:445px;
+    width:432px;
+  }
+  .gmap_canvas {
+    margin-top: 48px;
+    height:445px;
+    width:432px;
+  }
+  /* Reposicionamiento de la clase flotar */
+  .flotarDerecha {
+    position: relative;
+    left: 70%;
+  }
+  .flotarIzquierda {
+    position: relative;
+    left: 24px;
+  }
+  /* redimensionamiento de la galeria de la pagina inicio */
+  .contenedorImagenes img{
+    width: 200px;
+  }
+  .contenedorImagenes img:hover{
+    width: 210px;
+  }
+  .contenedorImagenes {
+    padding-top: 0;
+  }
+  /* Redimensionamiento y Reposicionamiento de los elementos del footer */
+  footer {
+    height: 286px;
+    display: grid;
+    justify-content: center;
+  }
+  .autor {
+    text-align: center;
+  }
+  /* Cambio de imagen y Redimensionamiento del banner de la pagina flora y fauna */
+  #bannerFF {
+    background-image: url(imagenes/media-480-800/banner2.png);
+  }
+  #bannerFF h1 {
+    font-size: 2.6em;
+    top: 24px;
+    left: 24px;
+  }
+  /* redimensionamiento de la galeria de flora y fauna */
+  img.flotarDerecha{
+    position: relative;
+    left: 33%;
+  }
+  .galeria {
+    padding: 24px 0px;
+    width: 90%;
+    margin: 12px auto;
+  }
+
+  .galeria img {
+    width: 100%;
+    padding: 0px;
+    margin-top:.5px;
+    transition: .35s;
+  }
+  .ColumnaGaleria{
+    padding: 2px;
+  }
+  .galeria img:hover {
+    padding: 5px;
+    transform: scale(2);
+  }
+  /* Desactiva el submenú oculto */
+  #sitio:hover .submenu{
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* Redimensionamiento de banner y texto de las paginas inicio y fauna y flora */
+  #bannerInicio h1 {
+    left: 60px;
+    top: 56px;
+  }
+  #bannerInicio p{
+    left: 30%;
+  }
+  #bannerFF {
+    background-image: url(imagenes/media-480-800/Banner2-1200.png);
+  }
+  #bannerFF h1 {
+    width: 50%;
+  }
+  /*Desactiva el submenu oculto */
+  #sitio:hover .submenu{
+    visibility: hidden;
+  }
+  /* redimensionamiento de la galeria de la pagina inicio */
+  .contenedorImagenes img{
+    width: 211px;
+  }
+  .contenedorImagenes img:hover{
+    width: 220px;
+  }
+  .contenedorImagenes {
+    padding-top: 56px;
+  }
+}
